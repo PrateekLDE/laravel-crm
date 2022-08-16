@@ -673,6 +673,11 @@
                 'email'                 => 'Email',
                 'notification_label'    => 'Notifications',
                 'new_lead'              => 'New lead',
+                'settings'              => 'Email Settings',
+                'sender-name'           => 'Email Sender Name',
+                'sender-name-tip'       => 'This name will be displayed in the customers inbox',
+                'sender-email'          => 'Sender Email Address',
+                'sender-email-tip'      => 'The email address of this channel to send emails to your customers',
             ]
         ],
 

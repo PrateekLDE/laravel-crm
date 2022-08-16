@@ -35,7 +35,8 @@ class Email extends Mailable
      */
     public function build()
     {
-        $this->to($this->email->reply_to)
+        $this->from(core()->getSenderEmailDetails()['email'], core()->getSenderEmailDetails()['name'])
+            ->to($this->email->reply_to)
             ->replyTo($this->email->parent_id ? $this->email->parent->unique_id : $this->email->unique_id)
             ->cc($this->email->cc ?? [])
             ->bcc($this->email->bcc ?? [])

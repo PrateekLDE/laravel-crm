@@ -128,10 +128,10 @@ class EmailController extends Controller
 
         $email = $this->emailRepository->create(array_merge(request()->all(), [
             'source'        => 'web',
-            'from'          => 'admin@example.com',
+            'from'          => core()->getConfigData('emails.email_settings.sender_email'),
             'user_type'     => 'admin',
             'folders'       => request('is_draft') ? ['draft'] : ['outbox'],
-            'name'          => auth()->guard('user')->user()->name,
+            'name'          => core()->getConfigData('emails.email_settings.sender_name'),
             'unique_id'     => $uniqueId,
             'message_id'    => $uniqueId,
             'reference_ids' => array_merge($referenceIds, [$uniqueId]),

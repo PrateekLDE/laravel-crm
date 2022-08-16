@@ -390,4 +390,22 @@ class Core
 
         return $coreConfigValue->value;
     }
+
+    /**
+     * Get Shop email sender details.
+     *
+     * @return array
+     */
+    public function getSenderEmailDetails()
+    {
+        $sender_name = $this->getConfigData('emails.email_settings.sender_name') ? $this->getConfigData('emails.email_settings.sender_name') : config('mail.from.name');
+
+        $sender_email = $this->getConfigData('emails.email_settings.sender_email') ? $this->getConfigData('emails.email_settings.sender_email') : config('mail.from.address');
+
+        return [
+            'name'  => $sender_name,
+            'email' => $sender_email,
+        ];
+    }
+
 }
